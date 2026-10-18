@@ -1,0 +1,53 @@
+classDiagram
+    class Usuario {
+        +int id
+        +String nombre
+        +String correo
+        +iniciarSesion()
+        +cerrarSesion()
+    }
+
+    class Ciudadano {
+        +registrarReporte()
+        +consultarEstadoCaso()
+    }
+
+    class Voluntario {
+        +atenderRescate()
+        +actualizarEstadoCaso()
+    }
+
+    class Veterinario {
+        +evaluarAnimal()
+        +registrarTratamiento()
+    }
+
+    class Administrador {
+        +gestionarUsuarios()
+        +asignarVoluntario()
+    }
+
+    class CasoRescate {
+        +int idCaso
+        +String ubicacion
+        +String descripcion
+        +String estado
+        +registrarCaso()
+        +actualizarEstado()
+    }
+
+    class ExpedienteAnimal {
+        +int idAnimal
+        +String especie
+        +String estadoSalud
+        +actualizarDatos()
+        +consultarHistorial()
+    }
+
+    Usuario <|-- Ciudadano
+    Usuario <|-- Voluntario
+    Usuario <|-- Veterinario
+    Usuario <|-- Administrador
+    CasoRescate "1" --> "1" ExpedienteAnimal : registra
+    Administrador --> Voluntario : asigna
+    Veterinario --> ExpedienteAnimal : evalua
