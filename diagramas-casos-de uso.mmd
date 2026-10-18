@@ -1,0 +1,13 @@
+flowchart LR
+    C[Ciudadano] --> R((Registrar reporte))
+    C --> E((Consultar estado))
+    V[Voluntario] --> A((Atender rescate))
+    V --> U((Actualizar estado))
+    M[Veterinario] --> T((Registrar tratamiento))
+    D[Administrador] --> G((Gestionar usuarios))
+    D --> S((Asignar voluntario))
+    D --> H((Gestionar adopciones))
+    R --> X[Sistema de rescate animal]
+    A --> X
+    T --> X
+    S --> X
