@@ -1,0 +1,45 @@
+Diagrama de clases
+
+Sistema de control de rescate y adopción animal
+
+Clase Usuario
+
+- Atributos: id, nombre, correo, contraseña.
+- Métodos: iniciarSesion(), cerrarSesion().
+
+Clase Ciudadano
+
+- Hereda de Usuario.
+- Métodos: registrarReporte(), consultarEstadoCaso().
+
+Clase Voluntario
+
+- Hereda de Usuario.
+- Métodos: atenderRescate(), actualizarEstadoCaso().
+
+Clase Veterinario
+
+- Hereda de Usuario.
+- Métodos: evaluarAnimal(), registrarTratamiento().
+
+Clase Administrador
+
+- Hereda de Usuario.
+- Métodos: gestionarUsuarios(), asignarVoluntario().
+
+Clase CasoRescate
+
+- Atributos: idCaso, ubicación, descripción, estado, fecha.
+- Métodos: registrarCaso(), actualizarEstado(), asignarVoluntario().
+
+Clase ExpedienteAnimal
+
+- Atributos: idAnimal, especie, edad, estadoSalud.
+- Métodos: actualizarDatos(), consultarHistorial().
+
+Relaciones
+
+- Ciudadano, Voluntario, Veterinario y Administrador heredan de Usuario.
+- Un CasoRescate está asociado con un ExpedienteAnimal.
+- El Administrador puede asignar un Voluntario a un CasoRescate.
+- El Veterinario registra evaluaciones y tratamientos del animal.
