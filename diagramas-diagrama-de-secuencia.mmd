@@ -1,0 +1,17 @@
+sequenceDiagram
+    actor Ciudadano
+    participant Sistema
+    participant Gestor as Gestor de casos
+    participant Fabrica as Fabrica de expedientes
+    participant Notificador
+    actor Voluntario
+
+    Ciudadano->>Sistema: Registrar reporte de rescate
+    Sistema->>Sistema: Validar información
+    Sistema->>Gestor: Crear caso de rescate
+    Gestor->>Fabrica: Crear expediente del animal
+    Fabrica-->>Gestor: Devolver expediente
+    Gestor-->>Sistema: Confirmar registro
+    Sistema->>Notificador: Enviar notificación
+    Notificador-->>Voluntario: Avisar del nuevo caso
+    Sistema-->>Ciudadano: Mostrar confirmación
